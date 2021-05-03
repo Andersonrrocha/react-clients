@@ -31,66 +31,60 @@ const Modal = ({closeModal, client}) => {
 
             <form onSubmit={handleSubmit(onSubmit)}>
                 <input type="text"
-                    className="form-control w-100" 
+                    className="form-control name" 
                     placeholder="Nome" 
                     {...register("name")}/>
                 <input 
                     type="text" 
-                    className="form-control w-50" 
+                    className="form-control email" 
                     placeholder="Email" 
                     {...register("email")}/>
                 <input 
                     type="text" 
-                    className="form-control w-50" 
-                    style={{gridColumn:"3/4"}} 
+                    className="form-control cpf" 
                     placeholder="CPF" 
                     {...register("cpf")}/>
                 <input 
                     type="text" 
-                    className="form-control w-25" 
-                    style={{gridColumn:"4/5"}} 
+                    className="form-control phone" 
                     placeholder="Telefone" 
                     {...register("phone")}/>
                 <input 
                     type="text" 
-                    className="form-control w-25" 
+                    className="form-control zipcode" 
                     placeholder="CEP" 
                     {...register("address.zipcode")}/>
                 <input 
                     type="text" 
-                    className="form-control" 
-                    style={{gridColumn:"2/5"}} 
+                    className="form-control street" 
                     placeholder="Rua" 
                     {...register("address.street")}/>
                 <input 
                     type="text" 
-                    className="form-control w-25" 
+                    className="form-control number" 
                     placeholder="Numero" 
                     {...register("address.number")}/>
                 <input 
                     type="text" 
-                    className="form-control" 
-                    style={{gridColumn:"2/4"}} 
+                    className="form-control neighborhood" 
                     placeholder="Bairro" 
                     {...register("address.neighborhood")}/>
                 <input 
                     type="text" 
-                    className="form-control" 
-                    style={{gridColumn:"4/5"}} 
+                    className="form-control city" 
                     placeholder="Cidade" 
                     {...register("address.city")}/>
                 <input 
                     type="text" 
-                    className="form-control w-25" 
+                    className="form-control state" 
                     placeholder="Estado" 
                     {...register("address.state")}/>
                 <input 
                     type="text" 
-                    className="form-control w-25" 
-                    style={{gridColumn:"2/3"}} 
+                    className="form-control country" 
                     placeholder="País" 
                     {...register("address.country")}/>
-                <input type="submit" className="save-button" style={{gridColumn:"4"}}/>
+                <input type="submit" className="save-button" />
             </form>
             </div>
         </section>
