@@ -9,7 +9,7 @@ const httpLink = new HttpLink({
 
   // Create a WebSocket link:
   const wsLink = new WebSocketLink({
-    uri: REACT_APP_GRAPHQL_WEBSOCKET,
+    uri: process.env.REACT_APP_GRAPHQL_WEBSOCKET,
     options: {
       reconnect: true,
       lazy: true,
