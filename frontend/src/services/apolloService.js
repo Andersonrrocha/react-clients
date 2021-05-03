@@ -1,18 +1,33 @@
-import {ApolloClient, InMemoryCache, HttpLink, from } from '@apollo/client'
-import {ErrorLink, onError} from '@apollo/client/link/error'
+import {ApolloClient, InMemoryCache, split, HttpLink } from '@apollo/client'
+import { WebSocketLink } from "@apollo/client/link/ws";
+import { getMainDefinition } from 'apollo-utilities';
 
-const errorLink = onError(({ graphqlErrors, networkError}) => {
-    if(graphqlErrors) {
-        graphqlErrors.map(({message, location, path}) => {
-            alert(`Graphql error ${message}`)
-        });
+// Create an http link:
+const httpLink = new HttpLink({
+    uri: 'http://localhost:4000/'
+  });
+
+  // Create a WebSocket link:
+  const wsLink = new WebSocketLink({
+    uri: 'ws://localhost:4000/graphql',
+    options: {
+      reconnect: true,
+      lazy: true,
+      inactivityTimeout: 30000,
     }
-});
+  });
 
-const link = from([
-    errorLink,
-    new HttpLink({uri: "http://localhost:4000/"})
-]);
+  // using the ability to split links, you can send data to each link
+  // depending on what kind of operation is being sent
+  const link = split(
+    // split based on operation type
+    ({ query }) => {
+      const { kind, operation } = getMainDefinition(query);
+      return kind === 'OperationDefinition' && operation === 'subscription';
+    },
+    wsLink,
+    httpLink,
+  );
 
 const client = new ApolloClient({
     cache: new InMemoryCache,
