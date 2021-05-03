@@ -1,10 +1,21 @@
-import './App.css';
+import React, {useState} from 'react';
+import './App.scss';
+import {ApolloProvider} from '@apollo/client'
+import client from './services/apolloService'
+
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Table from './components/Table';
 
 const App = () => {
   return (
-    <div className="App">
-    
-    </div>
+	<ApolloProvider client={client}>
+		<Header />
+			<section className="container">
+				<Table></Table>
+			</section>
+		<Footer />
+	</ApolloProvider>
   );
 }
 

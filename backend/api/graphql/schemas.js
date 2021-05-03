@@ -38,14 +38,14 @@ const query = gql`
 
 const mutation = gql`
 	type Mutation {
-		# criar nova mensagem
+		# Criar novo usuario
 		createUser(user: UserInput):User
 
-		#registrar novo usuário logado
+		# Atualizar usuario
 		updateUser(user:UserInput):User
 
-		#deslogar usuario
-		deleteUser(user:UserInput):String
+		# Deletar usuario
+		deleteUser(_id: ID!):String
 	}
 
     input UserInput {
@@ -55,6 +55,7 @@ const mutation = gql`
         phone: String!
         address: AddressInput!
         createdAt: DateTime
+		updatedAt: DateTime
     }
 
     input AddressInput{

@@ -37,11 +37,11 @@ const userResolvers = {
 			return `Usuario ${user.name} atualizado!`
 		},
 
-		deleteUser: async (_, { user }, {pubsub}) => {
-			await User.findByIdAndDelete(user._id)
+		deleteUser: async (_, { _id }, {pubsub}) => {
+			await User.findByIdAndDelete(_id)
 			const users = await User.find();
 			pubsub.publish(USER_CHANGED, {users:users});
-			return `Usuario ${user.name} excluido!`
+			return `Usuario excluido!`
 		},
     },
     Subscription: {
