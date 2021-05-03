@@ -55,11 +55,11 @@ const Table = ({openModal, openModalDetails}) => {
                             <td>{new Date(user.createdAt).toLocaleDateString()}</td>
                             <td>{new Date(user.updatedAt).toLocaleDateString()}</td>
                             <td className="icons">
-                                <Icons className="details" icon={faEye} onClick={() => openModalDetails(user)}/>
+                                <Icons className="details" color="#035685" icon={faEye} onClick={() => openModalDetails(user)}/>
                                 <span className="details">-</span>
-                                <Icons icon={faPen} onClick={() => openModal(user)}/>
+                                <Icons icon={faPen} color="#035685" onClick={() => openModal(user)}/>
                                 <span>-</span>
-                                <Icons icon={faTrash} onClick={() => deleteUser({variables:{id: user._id}})}/>
+                                <Icons icon={faTrash} color="#035685" onClick={() => deleteUser({variables:{id: user._id}})}/>
                             </td>
                         </tr>
                     )}

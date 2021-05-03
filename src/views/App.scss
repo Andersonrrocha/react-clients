@@ -230,6 +230,7 @@ header {
     display: flex;
     margin: 25px 0 200px;
     justify-content: center;
+    z-index: 10;
 
     .d-none-m {
         display: none ;
@@ -237,7 +238,6 @@ header {
             display: table-cell;
           }
     }
-    
 
     .content-table {
         border-collapse: collapse;
@@ -282,6 +282,9 @@ header {
                 color: #009879;
             }
         }
+    }
+    .icons svg{
+        cursor: pointer;
     }
 }
 
