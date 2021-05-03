@@ -1,12 +1,32 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useForm } from "react-hook-form";
+
+import { useMutation } from '@apollo/client';
+import { UPDATE_USER_MUTATION, CREATE_USER_MUTATION } from '../graphQL/Mutations';
+
 import { FontAwesomeIcon as Icons } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 
 const Modal = ({closeModal, client}) => {
-    console.log(client)
-    const {register, handleSubmit, setValue} = useForm();
-    const onSubmit = data => console.log(data);
+    const {register, handleSubmit, setValue} = useForm()
+    const [updateUser] = useMutation(UPDATE_USER_MUTATION)
+    const [createUser] = useMutation(CREATE_USER_MUTATION)
+
+    const onSubmit = data => {
+        //checks if form is in insertion or update mode
+        if(client){
+            const editedClient = {
+                ...client, 
+                ...client.address,
+                ...data,
+                ...data.address
+            }
+            const name = updateUser({variables:{...editedClient}})
+        }else{
+            createUser({variables:{...data, ...data.address}})
+        }
+        closeModal();
+    }
 
     if(client) {
         setValue('name', client.name)
