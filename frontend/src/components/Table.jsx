@@ -3,9 +3,9 @@ import { useQuery, useMutation } from '@apollo/client';
 import { GET_ALL_USERS_QUERY, USERS_SUBSCRIBE } from '../graphQL/Queries';
 import { DELETE_USER_MUTATION } from '../graphQL/Mutations';
 import { FontAwesomeIcon as Icons } from '@fortawesome/react-fontawesome'
-import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons'
+import { faPen, faTrash, faEye } from '@fortawesome/free-solid-svg-icons'
 
-const Table = ({openModal}) => {
+const Table = ({openModal, openModalDetails}) => {
     let users = [];
     // const getUsers = useQuery(GET_ALL_USERS_QUERY);
     const  { loading, error, data, subscribeToMore } = useQuery(GET_ALL_USERS_QUERY);
@@ -37,11 +37,11 @@ const Table = ({openModal}) => {
                 <thead>
                     <tr>
                         <th>Nome</th>
-                        <th>CPF</th>
-                        <th>Email</th>
-                        <th>Telefone</th>
-                        <th>Data Cadastro</th>
-                        <th>Data Atualização</th>
+                        <th className="d-none-m">CPF</th>
+                        <th className="d-none-m">Email</th>
+                        <th className="d-none-m">Telefone</th>
+                        <th>Cadastro</th>
+                        <th>Atualização</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -49,12 +49,14 @@ const Table = ({openModal}) => {
                     {users.map(user => 
                         <tr key={user._id}>
                             <td>{user.name}</td>
-                            <td>{user.cpf}</td>
-                            <td>{user.email}</td>
-                            <td>{user.phone}</td>
-                            <td>{user.createdAt}</td>
-                            <td>{user.updatedAt}</td>
+                            <td className="d-none-m">{user.cpf}</td>
+                            <td className="d-none-m">{user.email}</td>
+                            <td className="d-none-m">{user.phone}</td>
+                            <td>{new Date(user.createdAt).toLocaleDateString()}</td>
+                            <td>{new Date(user.updatedAt).toLocaleDateString()}</td>
                             <td className="icons">
+                                <Icons className="details" icon={faEye} onClick={() => openModalDetails(user)}/>
+                                <span className="details">-</span>
                                 <Icons icon={faPen} onClick={() => openModal(user)}/>
                                 <span>-</span>
                                 <Icons icon={faTrash} onClick={() => deleteUser({variables:{id: user._id}})}/>

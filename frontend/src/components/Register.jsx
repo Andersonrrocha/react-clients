@@ -1,100 +1,95 @@
 import React, { useState } from 'react'
 import { useForm } from "react-hook-form";
+import { FontAwesomeIcon as Icons } from '@fortawesome/react-fontawesome'
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
 
 const Modal = ({closeModal, client}) => {
     console.log(client)
     const {register, handleSubmit, setValue} = useForm();
     const onSubmit = data => console.log(data);
 
-    setValue('client', client.name)
-    setValue('client', client.name)
-    setValue('client', client.name)
-    setValue('client', client.name)
-    setValue('client', client.name)
-    setValue('client', client.name)
-    setValue('client', client.name)
-    setValue('client', client.name)
-    setValue('client', client.name)
-    setValue('client', client.name)
-    setValue('client', client.name)
- 
-
-
+    if(client) {
+        setValue('name', client.name)
+        setValue('email', client.email)
+        setValue('cpf', client.cpf)
+        setValue('phone', client.phone)
+        setValue('address.zipcode', client.address.zipcode)
+        setValue('address.street', client.address.street)
+        setValue('address.number', client.address.number)
+        setValue('address.neighborhood', client.address.neighborhood)
+        setValue('address.city', client.address.city)
+        setValue('address.state', client.address.state)
+        setValue('address.country', client.address.country)
+    }
 
     return (
         <section className="modal-content">
             <div className="modal-overlay">
-            <button className="close-btn" onClick={closeModal}>X</button>
+            <button className="close-btn" onClick={closeModal}>
+                <Icons icon={faTimes} size="lg" color="red"/>
+            </button>
 
             <form onSubmit={handleSubmit(onSubmit)}>
                 <input type="text"
                     className="form-control w-100" 
                     placeholder="Nome" 
-                    {...register("client.name")}/>
+                    {...register("name")}/>
                 <input 
                     type="text" 
                     className="form-control w-50" 
                     placeholder="Email" 
-                    {...register("client.email")}/>
+                    {...register("email")}/>
                 <input 
                     type="text" 
                     className="form-control w-50" 
                     style={{gridColumn:"3/4"}} 
                     placeholder="CPF" 
                     {...register("cpf")}/>
-                {/* <input 
+                <input 
                     type="text" 
                     className="form-control w-25" 
                     style={{gridColumn:"4/5"}} 
                     placeholder="Telefone" 
-                    value={newClient.phone} 
-                    onChange={(e) => setNewClient({...newClient,phone: e.target.value})}/>
+                    {...register("phone")}/>
                 <input 
                     type="text" 
                     className="form-control w-25" 
                     placeholder="CEP" 
-                    value={newClient.address.zipcode} 
-                    onChange={(e) => setNewClient({...newClient, address:{...newClient.address, zipcode: e.target.value}})}/>
+                    {...register("address.zipcode")}/>
                 <input 
                     type="text" 
                     className="form-control" 
                     style={{gridColumn:"2/5"}} 
                     placeholder="Rua" 
-                    value={newClient.address.street} 
-                    onChange={(e) => setNewClient({...newClient,address:{...newClient.address, street: e.target.value}})}/>
+                    {...register("address.street")}/>
                 <input 
                     type="text" 
                     className="form-control w-25" 
                     placeholder="Numero" 
-                    value={newClient.address.number} 
-                    onChange={(e) => setNewClient({...newClient,address:{...newClient.address, number: e.target.value}})}/>
+                    {...register("address.number")}/>
                 <input 
                     type="text" 
                     className="form-control" 
                     style={{gridColumn:"2/4"}} 
                     placeholder="Bairro" 
-                    value={newClient.address.neighborhood} 
-                    onChange={(e) => setNewClient({...newClient,address:{...newClient.address, neighborhood: e.target.value}})}/>
+                    {...register("address.neighborhood")}/>
                 <input 
                     type="text" 
                     className="form-control" 
                     style={{gridColumn:"4/5"}} 
                     placeholder="Cidade" 
-                    value={newClient.address.city} 
-                    onChange={(e) => setNewClient({...newClient,address:{...newClient.address, city: e.target.value}})}/>
+                    {...register("address.city")}/>
                 <input 
                     type="text" 
                     className="form-control w-25" 
                     placeholder="Estado" 
-                    value={newClient.address.state} 
-                    onChange={(e) => setNewClient({...newClient,address:{...newClient.address, state: e.target.value}})}/>
+                    {...register("address.state")}/>
                 <input 
                     type="text" 
                     className="form-control w-25" 
                     style={{gridColumn:"2/3"}} 
                     placeholder="País" 
-                    value={newClient.address.country} 
-                    onChange={(e) => setNewClient({...newClient,address:{...newClient.address, country: e.target.value}})}/> */}
+                    {...register("address.country")}/>
                 <input type="submit" className="save-button" style={{gridColumn:"4"}}/>
             </form>
             </div>

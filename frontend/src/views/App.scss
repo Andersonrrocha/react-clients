@@ -1,3 +1,22 @@
+//Project Colors
+$red: #e74c3c;
+$white: #fff;
+$black: #000;
+$blue: #3498db;
+$gray: #ccc;
+$light-gray: #e6e3e3fc;
+
+// Break-points
+
+$small-mobile: 320px;
+$mobile: 480px;
+$small-tablet: 600px;
+$tablet: 768px;
+$notebook: 1024px;
+$desktop: 1366px;
+$large-desktop: 1920px;
+
+
 * {
     margin: 0;
     padding: 0;
@@ -66,6 +85,7 @@ header {
 
     .modal-overlay {
         width: 100%;
+        padding-top: 35px;
     }
 
     form {
@@ -81,11 +101,16 @@ header {
         width: 100%;
         display: block;
         padding: 10px;
-        font-size: 20px;
+        font-size: 1.2rem;
         display: inline;
         border-radius: 5px;
         margin: 0 0 15px;
-        border: solid 1px #000;
+        border: solid 1px #898989;
+
+        &:focus-visible {
+            outline: none;
+            box-shadow: 0 0 2px 1px #898989;
+        }
     }
 
     .w-100 {
@@ -119,20 +144,35 @@ header {
         border-color: #12b4f2;
         color: #fff;
         box-shadow: 0 0 40px 40px #12b4f2 inset, 0 0 0 0 #12b4f2;
-      }
+    }
+    .close-btn {
+        top: 13px;
+        right: 15px;
+        border: none;
+        cursor: pointer;
+        position: absolute;
+        background: transparent;
+    }
 }
 
 .table {
     display: flex;
     margin: 25px 0 200px;
     justify-content: center;
+
+    .d-none-m {
+        display: none ;
+        @media (min-width: $tablet) {
+            display: table-cell;
+          }
+    }
     
 
     .content-table {
         border-collapse: collapse;
         margin: 25px 0;
         font-size: 0.9em;
-        min-width: 400px;
+        min-width: 200px;
         border-radius: 5px 5px 0 0;
         overflow: hidden;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
@@ -170,6 +210,29 @@ header {
                 font-weight: bold;
                 color: #009879;
             }
+        }
+    }
+}
+
+.details {
+    &.modal-content {
+        padding: 0 15px 20px;
+        max-width: 400px;
+    }
+    .modal-overlay {
+        padding-top: 15px;
+
+        label {
+            font-size: 0.7rem;
+        }
+
+        .detail-input {
+            font-size: 1rem;
+            border-radius: initial;
+            border: none;
+            padding: 3px 10px 5px 10px;
+            border-bottom: solid 1px #898989;
+            margin: 0;
         }
     }
 }

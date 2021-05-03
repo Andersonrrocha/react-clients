@@ -17,6 +17,8 @@ export const GET_USER_QUERY = gql`
                 state
                 country
             }
+            createdAt
+            updatedAt
         }
     }
 `;
@@ -30,9 +32,13 @@ export const GET_ALL_USERS_QUERY = gql`
             email
             phone
             address{
+                zipcode
                 street
                 number
+                neighborhood
                 city
+                state
+                country
             }
             createdAt
             updatedAt
