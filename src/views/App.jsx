@@ -27,22 +27,25 @@ const App = () => {
 	const [modalIsOpen, setModalIsOpen] = useState(false)
 	const [modalDetailsIsOpen, setmodalDetailsIsOpen] = useState(false)
 	const [modalContent, setModalContent] = useState()
+	const [isAbsolute, setIsAbsolute] = useState(true)
 
 	const openModal = (client) => {
 		setModalIsOpen(true);
 		setModalContent(client ? client : false)
+		setIsAbsolute(false)
 	}
 
 	const openModalDetails = (client) => {
 		setmodalDetailsIsOpen(true)
 		setModalContent(client)
-		
+		setIsAbsolute(false)
 	}
 
 	const closeModal = () => {
 		setModalIsOpen(false)
 		setmodalDetailsIsOpen(false)
 		setModalContent(false)
+		setIsAbsolute(true)
 	}
 
   return (
@@ -52,7 +55,7 @@ const App = () => {
 				<div className="button-holder">
 					<button className="register" onClick={() => openModal()}>Cadastrar Cliente</button>
 				</div>
-				<Table openModal={openModal} openModalDetails={openModalDetails}></Table>
+				<Table openModal={openModal} openModalDetails={openModalDetails} isAbsolute={isAbsolute}></Table>
 				<Modal
 					isOpen={modalIsOpen}
 					onRequestClose={closeModal}

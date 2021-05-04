@@ -6,7 +6,7 @@ import { FontAwesomeIcon as Icons } from '@fortawesome/react-fontawesome'
 import { faPen, faTrash, faEye } from '@fortawesome/free-solid-svg-icons'
 import loadingGif from '../utils/loading.gif'
 
-const Table = ({openModal, openModalDetails}) => {
+const Table = ({openModal, openModalDetails, isAbsolute}) => {
     let users = [];
     // const getUsers = useQuery(GET_ALL_USERS_QUERY);
     const  { loading, error, data, subscribeToMore } = useQuery(GET_ALL_USERS_QUERY);
@@ -29,7 +29,7 @@ const Table = ({openModal, openModalDetails}) => {
 
     return (
         <div className="table">
-            <table className="content-table">
+            <table className={isAbsolute ? 'content-table absolute' :'content-table'}>
                 <thead>
                     <tr>
                         <th>Nome</th>

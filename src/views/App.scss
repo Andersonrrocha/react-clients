@@ -253,8 +253,11 @@ header {
         border-radius: 5px 5px 0 0;
         overflow: hidden;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-        position: absolute;
-        z-index: 50;
+        
+        &.absolute {
+            position: absolute;
+            z-index: 50;
+        }
     
         thead tr {
             background-color: $blue;

@@ -1,4 +1,4 @@
-<img src="https://img.shields.io/npm/v/react?label=React"/> <img src="https://img.shields.io/github/languages/code-size/Andersonrrocha/react-comics"/> <img src="https://img.shields.io/github/last-commit/Andersonrrocha/react-comics"/> <img src="https://img.shields.io/github/license/Andersonrrocha/react-comics"/>
+<img src="https://img.shields.io/npm/v/react?label=React"/> <img src="https://img.shields.io/github/languages/code-size/Andersonrrocha/react-clients-frontend"/> <img src="https://img.shields.io/github/last-commit/Andersonrrocha/react-clients-frontend"/> <img src="https://img.shields.io/github/license/Andersonrrocha/react-clients-frontend"/>
 # React Comics
 
 ## Indice
@@ -13,7 +13,7 @@
 
 ## 🔖 Sobre
 
-O projeto <a src="https://react-clients-frontend.herokuapp.com/">React Clients</a> é uma SPA para cadastro e gerenciamento de clientes, utilizando uma backend com nodejs e um banco de dados não relacional (MongoDB) utilizando GraphQL para integração e atualização automatica dos dados na pagina quando houver alteração de dados no banco de dados.
+O projeto [React Clients](https://react-clients-frontend.herokuapp.com) é uma SPA para cadastro e gerenciamento de clientes, utilizando uma backend com nodejs e um banco de dados não relacional (MongoDB) utilizando GraphQL para integração e atualização automatica dos dados na pagina quando houver alteração de dados no banco de dados.
 
 ## ⚒️  Tecnologias
 
