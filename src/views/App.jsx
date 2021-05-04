@@ -10,7 +10,6 @@ import Table from '../components/Table';
 import Register from '../components/Register'
 import Details from '../components/Details'
 
-
 Modal.setAppElement('body');
 
 const customStyles = {

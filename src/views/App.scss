@@ -1,10 +1,13 @@
 //Project Colors
-$red: #e74c3c;
 $white: #fff;
+$snow-white: #f3f3f3;
 $black: #000;
-$blue: #3498db;
-$gray: #ccc;
-$light-gray: #e6e3e3fc;
+$green: #009879;
+$blue: #12b4f2;
+$dark-blue: #035685;
+$gray: #898989;
+$light-gray: #ebe8e8;
+$snow-gray: #ddd;
 
 // Break-points
 
@@ -24,7 +27,7 @@ $large-desktop: 1920px;
 }
 
 html,body {
-    background-color:#ebe8e8;
+    background-color:$light-gray;
     font-family: -apple-system, BlinkMacSystemFont, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
@@ -45,8 +48,8 @@ html,body {
     .register {
         font-weight: 700;
         outline: none;
-        background-color: #12b4f2;
-        border: 2px solid #12b4f2;
+        background-color: $blue;
+        border: 2px solid $blue;
         border-radius: 0.6em;
         cursor: pointer;
         align-self: center;
@@ -54,12 +57,16 @@ html,body {
         padding: 12px 1.2em;
         text-align: center;
         text-transform: uppercase;
-        border-color: #12b4f2;
-        color: #fff;
-        box-shadow: 0 0 40px 40px #12b4f2 inset, 0 0 0 0 #12b4f2;
+        border-color: $blue;
+        color:$white;
+        box-shadow: 0 0 40px 40px $blue inset, 0 0 0 0 $blue;
       }
 }
 
+.loading {
+    display: flex;
+    justify-content: center;
+}
   
 .center {
     display: flex;
@@ -69,7 +76,7 @@ html,body {
 
 header {
     min-height: 10vh;
-    background:#035685;
+    background:$dark-blue;
     
     img {
         width: 90px;
@@ -105,7 +112,7 @@ header {
         display: inline;
         border-radius: 5px;
         margin: 0 0 2px;
-        border: solid 1px #898989;
+        border: solid 1px $gray;
 
         @media (min-width: $notebook) {
             margin: 0 0 15px;
@@ -113,7 +120,7 @@ header {
 
         &:focus-visible {
             outline: none;
-            box-shadow: 0 0 2px 1px #898989;
+            box-shadow: 0 0 2px 1px $gray;
         }
     }
 
@@ -195,8 +202,8 @@ header {
         box-sizing: border-box;
         outline: none;
         margin: 0 0 15px;
-        background-color: #12b4f2;
-        border: 2px solid #12b4f2;
+        background-color: $blue;
+        border: 2px solid $blue;
         border-radius: 0.6em;
         cursor: pointer;
         align-self: center;
@@ -207,9 +214,9 @@ header {
         text-transform: uppercase;
         font-family: 'Montserrat', sans-serif;
         font-weight: 700;
-        border-color: #12b4f2;
-        color: #fff;
-        box-shadow: 0 0 40px 40px #12b4f2 inset, 0 0 0 0 #12b4f2;
+        border-color: $blue;
+        color: $white;
+        box-shadow: 0 0 40px 40px $blue inset, 0 0 0 0 $blue;
         grid-column: 2/4;
 
         @media (min-width: $notebook) {
@@ -230,7 +237,8 @@ header {
     display: flex;
     margin: 25px 0 200px;
     justify-content: center;
-    z-index: 10;
+    position: absolute;
+    bottom: 0;
 
     .d-none-m {
         display: none ;
@@ -249,8 +257,8 @@ header {
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     
         thead tr {
-            background-color: #12b4f2;
-            color: #ffffff;
+            background-color: $blue;
+            color: $white;
             text-align: left;
             font-weight: bold;
         }
@@ -266,20 +274,20 @@ header {
 
         tbody {
             tr {
-                border-bottom: 1px solid #dddddd;
+                border-bottom: 1px solid $snow-gray;
             }
     
             tr:nth-of-type(even) {
-                background-color: #f3f3f3;
+                background-color: $snow-white;
             }
     
             tr:last-of-type {
-                border-bottom: 2px solid #12b4f2
+                border-bottom: 2px solid $blue;
             }
 
             tr.active-row {
                 font-weight: bold;
-                color: #009879;
+                color: $green;
             }
         }
     }
@@ -305,7 +313,7 @@ header {
             border-radius: initial;
             border: none;
             padding: 3px 10px 5px 10px;
-            border-bottom: solid 1px #898989;
+            border-bottom: solid 1px $gray;
             margin: 0;
         }
     }
@@ -318,6 +326,5 @@ footer {
     svg {
         position: absolute;
         bottom: 0;
-        //12b4f2
     }
 }

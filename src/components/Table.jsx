@@ -4,6 +4,7 @@ import { GET_ALL_USERS_QUERY, USERS_SUBSCRIBE } from '../graphQL/Queries';
 import { DELETE_USER_MUTATION } from '../graphQL/Mutations';
 import { FontAwesomeIcon as Icons } from '@fortawesome/react-fontawesome'
 import { faPen, faTrash, faEye } from '@fortawesome/free-solid-svg-icons'
+import loadingGif from '../utils/loading.gif'
 
 const Table = ({openModal, openModalDetails}) => {
     let users = [];
@@ -19,15 +20,11 @@ const Table = ({openModal, openModalDetails}) => {
     const [deleteUser] = useMutation(DELETE_USER_MUTATION)
 
     if(loading) {
-        return (<div>Loading...</div>)
+        return (<div className="loading"><img src={loadingGif}/></div>)
     }
 
     if(data) {
         users = data.users
-    }
-
-    const updateUser = () => {
-
     }
 
     return (
