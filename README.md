@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+<img src="https://img.shields.io/npm/v/react?label=React"/> <img src="https://img.shields.io/github/languages/code-size/Andersonrrocha/react-comics"/> <img src="https://img.shields.io/github/last-commit/Andersonrrocha/react-comics"/> <img src="https://img.shields.io/github/license/Andersonrrocha/react-comics"/>
+# React Comics
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Indice
 
-## Available Scripts
+- [Sobre](#-sobre)
+- [Tecnologias](#-tecnologias)
+    - [Principais Tecnologias](#-principais-tecnologias)
+    - [Recursos Adicionais](#-recursos-adicionais-utilizados)
+- [Como baixar o projeto](#-como-baixar-o-projeto)
+- [Autor](#-autor)
 
-In the project directory, you can run:
 
-### `yarn start`
+## 🔖 Sobre
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+O projeto <a src="https://react-clients-frontend.herokuapp.com/">React Clients</a> é uma SPA para cadastro e gerenciamento de clientes, utilizando uma backend com nodejs e um banco de dados não relacional (MongoDB) utilizando GraphQL para integração e atualização automatica dos dados na pagina quando houver alteração de dados no banco de dados.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## ⚒️  Tecnologias
 
-### `yarn test`
+As seguintes ferramentas foram usadas na construção do projeto:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+##### Principais Tecnologias
+- [React](https://pt-br.reactjs.org/)
+- [Sass](https://sass-lang.com/)
+- [Apollo GraphQL](https://www.apollographql.com/) 
 
-### `yarn build`
+##### Recursos adicionais utilizados
+- [React Hooks](https://pt-br.reactjs.org/docs/hooks-intro.html) utilizado para gerenciamento de estado da aplicação.
+- [react-modal](https://github.com/reactjs/react-modal) utilizado para criar modal com os detalhes do cliente e cadastrar cliente.
+## 🗂 Como baixar o projeto
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    # Clonar o repositório
+    $ git clone https://github.com/Andersonrrocha/react-clients-frontend
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    # Entrar no diretório
+    $ cd react-comics-frontend
 
-### `yarn eject`
+    # Instalar as dependências
+    $ npm install
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+    # Iniciar o projeto
+    $ npm start
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+### Autor
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<a href="https://github.com/Andersonrrocha">
+ <img style="border-radius: 50%;" src="https://scontent.fpoa1-1.fna.fbcdn.net/v/t1.0-9/120135497_3284127605028580_4563795741532333965_o.jpg?_nc_cat=110&ccb=2&_nc_sid=09cbfe&_nc_ohc=d5zovM4_3eIAX8eV6y1&_nc_ht=scontent.fpoa1-1.fna&oh=0c7e83f7d02c6e2cd72b00c8ade72d09&oe=6044E532" width="100px;" alt=""/>
+ <br />
+ <sub><b>Anderson Rocha</b></sub></a> <a href="https://github.com/Andersonrrocha" title="Github">🚀</a>
