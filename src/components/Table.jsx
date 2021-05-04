@@ -29,7 +29,6 @@ const Table = ({openModal, openModalDetails}) => {
 
     return (
         <div className="table">
-            <h1></h1>
             <table className="content-table">
                 <thead>
                     <tr>
